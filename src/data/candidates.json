@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c1",
+    "firstName": "Sarah",
+    "lastName": "Chen",
+    "email": "sarah.chen@email.com",
+    "phone": "+972-50-1234567",
+    "location": "Tel Aviv, Israel",
+    "summary": "Full-stack developer with 6 years of experience in web applications.",
+    "status": "active",
+    "skills": [
+      { "id": "s1", "name": "TypeScript", "level": "expert", "yearsOfExperience": 5 },
+      { "id": "s2", "name": "React", "level": "advanced", "yearsOfExperience": 4 }
+    ],
+    "experience": [
+      {
+        "id": "e1",
+        "company": "TechFlow Ltd",
+        "title": "Senior Developer",
+        "startDate": "2022-03",
+        "description": "Led development of analytics dashboard.",
+        "technologies": ["React", "TypeScript", "Node.js"]
+      }
+    ],
+    "education": [
+      {
+        "id": "ed1",
+        "institution": "Tel Aviv University",
+        "degree": "B.Sc.",
+        "field": "Computer Science",
+        "startDate": "2014",
+        "endDate": "2017"
+      }
+    ],
+    "documents": [
+      {
+        "id": "d1",
+        "name": "Sarah_Chen_CV_2024.pdf",
+        "type": "cv",
+        "url": "/documents/sarah_chen_cv_2024.pdf",
+        "uploadedAt": "2024-11-15"
+      }
+    ],
+    "positionIds": ["p1"]
+  }
+]

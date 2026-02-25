@@ -1,0 +1,22 @@
+[
+  {
+    "id": "p1",
+    "title": "Senior Full-Stack Developer",
+    "department": "Engineering",
+    "location": "Tel Aviv, Israel",
+    "type": "full-time",
+    "status": "open",
+    "description": "We are looking for a senior full-stack developer to join our engineering team.",
+    "requirements": [
+      "5+ years of experience with modern web frameworks",
+      "Strong TypeScript and Node.js skills",
+      "Experience with cloud infrastructure (AWS/GCP)"
+    ],
+    "niceToHave": [
+      "Experience with Kubernetes",
+      "Open source contributions"
+    ],
+    "candidateIds": ["c1"],
+    "createdAt": "2024-10-01"
+  }
+]
