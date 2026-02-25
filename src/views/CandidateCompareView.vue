@@ -2,6 +2,7 @@
 import { useRoute, useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { useCandidatesStore } from '@/stores/candidates'
+import { skillLevelSeverity } from '@/composables/useSkillLevelSeverity'
 import Card from 'primevue/card'
 import Tag from 'primevue/tag'
 import Button from 'primevue/button'
@@ -18,19 +19,6 @@ const candidateIds = computed(() => {
 const candidates = computed(() =>
   candidateIds.value.map((id) => store.getCandidateById(id)).filter(Boolean),
 )
-
-function skillLevelSeverity(level?: string) {
-  switch (level) {
-    case 'expert':
-      return 'success'
-    case 'advanced':
-      return 'info'
-    case 'intermediate':
-      return 'warn'
-    default:
-      return 'secondary'
-  }
-}
 </script>
 
 <template>
@@ -42,9 +30,7 @@ function skillLevelSeverity(level?: string) {
 
     <div v-if="candidates.length === 2" class="compare-grid">
       <Card v-for="candidate in candidates" :key="candidate!.id" class="compare-card">
-        <template #title>
-          {{ candidate!.firstName }} {{ candidate!.lastName }}
-        </template>
+        <template #title> {{ candidate!.firstName }} {{ candidate!.lastName }} </template>
         <template #subtitle>{{ candidate!.location }}</template>
         <template #content>
           <section v-if="candidate!.summary" class="compare-section">

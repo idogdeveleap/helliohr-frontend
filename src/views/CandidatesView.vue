@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCandidatesStore } from '@/stores/candidates'
 import { useRouter } from 'vue-router'
+import { skillLevelSeverity } from '@/composables/useSkillLevelSeverity'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import InputText from 'primevue/inputtext'
@@ -20,19 +21,6 @@ function viewCandidate(id: string) {
 function compareSelected() {
   const ids = selectedCandidates.value.map((c) => c.id).join(',')
   router.push({ name: 'candidate-compare', query: { ids } })
-}
-
-function skillLevelSeverity(level?: string) {
-  switch (level) {
-    case 'expert':
-      return 'success'
-    case 'advanced':
-      return 'info'
-    case 'intermediate':
-      return 'warn'
-    default:
-      return 'secondary'
-  }
 }
 </script>
 
@@ -82,13 +70,7 @@ function skillLevelSeverity(level?: string) {
       </Column>
       <Column header="Actions" header-style="width: 8rem">
         <template #body="{ data }">
-          <Button
-            icon="pi pi-eye"
-            text
-            rounded
-            aria-label="View"
-            @click="viewCandidate(data.id)"
-          />
+          <Button icon="pi pi-eye" text rounded aria-label="View" @click="viewCandidate(data.id)" />
         </template>
       </Column>
     </DataTable>

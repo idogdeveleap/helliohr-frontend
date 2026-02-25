@@ -3,6 +3,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { useCandidatesStore } from '@/stores/candidates'
 import { usePositionsStore } from '@/stores/positions'
+import { skillLevelSeverity } from '@/composables/useSkillLevelSeverity'
 import Card from 'primevue/card'
 import Tag from 'primevue/tag'
 import Button from 'primevue/button'
@@ -20,19 +21,6 @@ const linkedPositions = computed(
     candidate.value?.positionIds.map((id) => positionsStore.getPositionById(id)).filter(Boolean) ??
     [],
 )
-
-function skillLevelSeverity(level?: string) {
-  switch (level) {
-    case 'expert':
-      return 'success'
-    case 'advanced':
-      return 'info'
-    case 'intermediate':
-      return 'warn'
-    default:
-      return 'secondary'
-  }
-}
 </script>
 
 <template>
